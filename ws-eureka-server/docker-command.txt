@@ -1,0 +1,4 @@
+.\mvnw clean package
+ 
+docker build -t servicio-eureka-server:v1 .
+docker run -p 8761:8761 --name servicio-eureka-server --network springcloud servicio-eureka-server:v1

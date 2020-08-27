@@ -1,0 +1,3 @@
+docker pull postgres:12-alpine
+docker run -p 5432:5432 --name microservicios-postgres12 --network springcloud -e POSTGRES_PASSWORD=sasa -e POSTGRES_DB=db_springboot_cloud -d postgres:12-alpine
+docker logs -f microservicios-postgres12

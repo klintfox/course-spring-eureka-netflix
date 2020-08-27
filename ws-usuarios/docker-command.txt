@@ -1,0 +1,4 @@
+.\mvnw clean package -DskipTests
+ 
+docker build -t servicio-usuarios:v1 .
+docker run -P --network springcloud servicio-usuarios:v1

@@ -1,0 +1,4 @@
+.\mvnw clean package -DskipTests
+ 
+docker build -t servicio-zuul-server:v1 .
+docker run -p 8090:8090 --network springcloud servicio-zuul-server:v1

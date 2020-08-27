@@ -1,0 +1,4 @@
+.\mvnw clean package -DskipTests
+ 
+docker build -t servicio-oauth:v1 .
+docker run -p 9100:9100 --network springcloud servicio-oauth:v1

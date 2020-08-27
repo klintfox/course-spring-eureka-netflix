@@ -1,0 +1,4 @@
+docker pull rabbitmq:3.8-management-alpine
+docker run -p 15672:15672 -p 5672:5672 --name microservicios-rabbitmq38 --network springcloud -d rabbitmq:3.8-management-alpine
+ 
+docker logs -f microservicios-rabbitmq38
