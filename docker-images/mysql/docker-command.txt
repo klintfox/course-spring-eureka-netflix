@@ -1,3 +1,7 @@
 docker pull mysql:8
 docker run -p 3306:3306 --name microservicios-mysql8 --network springcloud -e MYSQL_ROOT_PASSWORD=sasa -e MYSQL_DATABASE=db_springboot_cloud -d mysql:8
 docker logs -f microservicios-mysql8
+
+# el servicio de mysql demora un poco por lo que hasta que los logs no indique el puerto en el que correo
+# no se podrá conectar con workbench
+#docker exec -it microservicios-mysql8 mysql -uroot -p

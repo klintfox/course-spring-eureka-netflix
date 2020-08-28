@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.app.commons</groupId>
-	<artifactId>springboot-servicio-commons</artifactId>
+	<artifactId>ws-commons</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-servicio-commons</name>
+	<name>ws-commons</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

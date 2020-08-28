@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.app.oauth</groupId>
-	<artifactId>springboot-servicio-oauth</artifactId>
+	<artifactId>ws-oauth</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-servicio-oauth</name>
+	<name>ws-oauth</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -23,7 +23,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.app.usuarios.commons</groupId>
-			<artifactId>springboot-servicio-usuarios-commons</artifactId>
+			<artifactId>ws-usuarios-commons</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<exclusions>
 				<exclusion>

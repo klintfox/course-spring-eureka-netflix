@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.app.eureka</groupId>
-	<artifactId>springboot-servicio-eureka-server</artifactId>
+	<artifactId>ws-eureka-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-servicio-eureka-server</name>
+	<name>ws-eureka-server</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

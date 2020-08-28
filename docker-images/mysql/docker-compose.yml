@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  mysql:
+    container_name: "mysql"
+    image: mysql:8
+    container_name: mysql
+    ports:
+      - 3306:3306
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_springboot_cloud
+      # MYSQL_USER: root
+      # MYSQL_PASSWORD: root

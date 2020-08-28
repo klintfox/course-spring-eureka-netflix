@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.app.item</groupId>
-	<artifactId>springboot-servicio-item</artifactId>
+	<artifactId>ws-item</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-servicio-item</name>
+	<name>ws-item</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -22,7 +22,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.app.commons</groupId>
-			<artifactId>springboot-servicio-commons</artifactId>
+			<artifactId>ws-commons</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>

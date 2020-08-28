@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.app.zuul</groupId>
-	<artifactId>springboot-servicio-zuul-server</artifactId>
+	<artifactId>ws-zuul-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-servicio-zuul-server</name>
+	<name>ws-zuul-server</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
