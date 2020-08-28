@@ -43,8 +43,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		clients.inMemory().withClient("frontendapp") //env.getProperty("config.security.oauth.client.id")
-		.secret(passwordEncoder.encode("12345")) // env.getProperty("config.security.oauth.client.secret"))
+		clients.inMemory().withClient(env.getProperty("config.security.oauth.client.id")) //env.getProperty("config.security.oauth.client.id")
+		.secret(passwordEncoder.encode(env.getProperty("config.security.oauth.client.secret"))) // env.getProperty("config.security.oauth.client.secret")
 		.scopes("read","write")
 		.authorizedGrantTypes("password","refresh_token")
 		.accessTokenValiditySeconds(3600)
@@ -71,7 +71,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Bean
 	public JwtAccessTokenConverter accessTokenConverter() {
 		JwtAccessTokenConverter tokenConverter = new JwtAccessTokenConverter();
-		tokenConverter.setSigningKey("algun_codigo_secreto"); //env.getProperty("config.security.oauth.jwt.key")
+		tokenConverter.setSigningKey(env.getProperty("config.security.oauth.jwt.key")); //env.getProperty("config.security.oauth.jwt.key")
 		return tokenConverter;
 	}
 
