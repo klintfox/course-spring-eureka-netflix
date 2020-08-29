@@ -1,13 +1,13 @@
 version: '3.1'
 
 services:
-  postgres-db:
+  db-postgres:
     image: "postgres"
-    container_name: "postgres"
+    container_name: "microservicios-postgres"
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres_db
+      # POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: sasa
+      POSTGRES_DB: db_springboot_cloud
     ports:
       - 5432:5432
     restart: always
@@ -24,7 +24,7 @@ services:
     ports:
       - "16543:80"
     depends_on:
-      - postgres-db
+      - db-postgres
     networks:
       - postgres-compose-network    
 networks: 
