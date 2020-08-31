@@ -1,4 +1,5 @@
-version: '3.7'
+version: '3.1'
+
 services:
   config-server:
     image: config-server:v1
@@ -24,8 +25,8 @@ services:
     environment: 
       MYSQL_DATABASE: db_springboot_cloud
       MYSQL_ROOT_PASSWORD: sasa
-  microservicios-postgres12:
-    image: postgres:12-alpine
+  microservicios-postgres:
+    image: postgres:latest
     ports:
       - "5432:5432"
     restart: always
@@ -56,7 +57,7 @@ services:
       - config-server
       - servicio-eureka-server
       - servicio-productos
-   servicio-usuarios:
+  servicio-usuarios:
     image: servicio-usuarios:v1
     restart: always
     networks:
@@ -64,8 +65,8 @@ services:
     depends_on: 
       - config-server
       - servicio-eureka-server
-      - microservicios-postgres12
-   servicio-oauth:
+      - microservicios-postgres
+  servicio-oauth:
     image: servicio-oauth:v1
     ports:
       - "9100:9100"

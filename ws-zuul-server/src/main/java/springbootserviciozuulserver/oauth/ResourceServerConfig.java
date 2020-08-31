@@ -25,8 +25,8 @@ import org.springframework.web.filter.CorsFilter;
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
 	
-//	@Value("${config.security.oauth.jwt.key}")
-//	private String jwtKey;
+	@Value("${config.security.oauth.jwt.key}")
+	private String jwtKey;
 	
 	@Override
 	public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
@@ -37,11 +37,11 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
 	public void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/api/security/oauth/**").permitAll()
 		.antMatchers(HttpMethod.GET, "/api/productos/listar", "/api/items/listar", "/api/usuarios/usuarios").permitAll()
-		.antMatchers(HttpMethod.GET, "/api/productos/ver/{id}", "/api/items/ver/{id}/cantidad/{cantidad}", 
-				"/api/usuarios/usuarios/{id}").hasAnyRole("ADMIN", "USER")
-				.antMatchers("/api/productos/**", "/api/items/**", "/api/usuarios/**").hasRole("ADMIN")
-				.anyRequest().authenticated()
-				.and().cors().configurationSource(corsConfigurationSource());				
+		.antMatchers(HttpMethod.GET,"/api/productos/ver/{id}", "/api/items/ver/{id}/cantidad/{cantidad}",
+			"/api/usuarios/usuarios/{id}").hasAnyRole("ADMIN", "USER")
+		.antMatchers("/api/productos/**", "/api/items/**", "/api/usuarios/**").hasRole("ADMIN")
+			.anyRequest().authenticated()
+			.and().cors().configurationSource(corsConfigurationSource());				
 	}	
 
 	@Bean
@@ -73,7 +73,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
 	@Bean
 	public JwtAccessTokenConverter accessTokenConverter() {
 		JwtAccessTokenConverter tokenConverter = new JwtAccessTokenConverter();
-		tokenConverter.setSigningKey("algun_codigo_secreto"); //jwtKey
+//		tokenConverter.setSigningKey("algun_codigo_secreto"); //jwtKey
+		tokenConverter.setSigningKey(jwtKey);
 		return tokenConverter;
 	}
 	
